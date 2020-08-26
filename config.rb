@@ -27,7 +27,24 @@ options = {
   end,
   :dummy_auth => false,
   # protect all routes
-  :protected_routes => ['/*'],
+  :protected_routes => [
+    '/private/*',
+    '/private',
+    '/revert/*',
+    '/revert',
+    '/create/*',
+    '/create',
+    '/edit/*',
+    '/edit',
+    '/history/*',
+    '/history',
+    '/latest_changes',
+    '/rename/*',
+    '/rename/',
+    '/upload/*',
+    '/upload/',
+    '/delete/*',
+    '/delete'],
   # Specify committer name as just the user name
   :author_format => Proc.new { |user| user.name },
   # Specify committer e-mail as just the user e-mail
