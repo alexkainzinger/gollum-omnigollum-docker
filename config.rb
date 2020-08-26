@@ -51,7 +51,9 @@ options = {
     '*/upload/*',
     '*/upload/',
     '*/delete/*',
-    '*/delete'],
+    '*/delete',
+    '*/upload_file',
+    '*/upload_file/*'],
   # Specify committer name as just the user name
   :author_format => Proc.new { |user| user.name },
   # Specify committer e-mail as just the user e-mail
