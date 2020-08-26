@@ -19,7 +19,7 @@ COPY config.rb /home/config.rb
 WORKDIR /home
 RUN mkdir wiki
 
-ENTRYPOINT ["/usr/local/bundle/bin/gollum", "/home/wiki", "--config", "config.rb"]
+ENTRYPOINT ["/usr/local/bundle/bin/gollum", "--config", "config.rb"]
 
 # default port
 EXPOSE 4567

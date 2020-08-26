@@ -1,6 +1,10 @@
 # picked & tweaked from https://ronnieroller.com/Gollum
 Gollum::Page.send :remove_const, :FORMAT_NAMES if defined? Gollum::Page::FORMAT_NAMES
 
+# Specify the path to the Wiki.
+gollum_path = '/home/wiki'
+Precious::App.set(:gollum_path, gollum_path)
+
 ## Omni Auth
 require 'omnigollum'
 require 'omniauth/strategies/github'
@@ -18,6 +22,9 @@ wiki_options = {
   :show_all => true
 }
 Precious::App.set(:wiki_options, wiki_options)
+
+# Set as Sinatra environment as production (no stack traces)
+Precious::App.set(:environment, :production)
 
 options = {
   # OmniAuth::Builder block is passed as a proc
